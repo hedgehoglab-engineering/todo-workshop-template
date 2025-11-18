@@ -1,0 +1,32 @@
+{
+  "name": "todo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve ./out",
+    "lint": "eslint",
+    "clean": "rm -rf .next out node_modules next-env.d.ts"
+  },
+  "dependencies": {
+    "@mantine/core": "^8",
+    "@mantine/hooks": "^8",
+    "@tabler/icons-react": "^3",
+    "next": "^16",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16",
+    "postcss": "^8",
+    "postcss-preset-mantine": "^1",
+    "postcss-simple-vars": "^7",
+    "serve": "^14",
+    "typescript": "^5"
+  }
+}
