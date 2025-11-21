@@ -1,18 +1,28 @@
 # Frontend
 
-## TLDR
+## How do I get started?
+
+Install dependencies / libraries:
+
+```bash
+npm ci
+```
+
+Then run the frontend...
+
+## How do I run it?
+
+With live-reload (for development):
 
 ```bash
 npm run dev
 ```
 
-OR
+Without live-reload:
 
 ```bash
 npm run build && npm run start
 ```
-
-`npm run dev` includes live-restarts with a dev server, `npm run start` will run a production build.
 
 ## Where is the code?
 
