@@ -6,6 +6,14 @@
 pipenv run uvicorn main:app --reload
 ```
 
+OR
+
+```bash
+pipenv run uvicorn main:app
+```
+
+`pipenv run uvicorn main:app --reload` includes live-restarts with a dev server, `pipenv run uvicorn main:app` will run a production build.
+
 ## Where is the code?
 
 Start in `main.py`.
