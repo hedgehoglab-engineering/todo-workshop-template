@@ -9,11 +9,14 @@ npm run dev
 OR
 
 ```bash
-npm run build
-npm run start
+npm run build && npm run start
 ```
 
 `npm run dev` includes live-restarts with a dev server, `npm run start` will run a production build
+
+## Where is the code?
+
+Start in `app/page.tsx`.
 
 ## Relevant documentation
 
