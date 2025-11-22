@@ -8,7 +8,7 @@ const items = [
   "Recycle."
 ];
 
-export function TodoList () {
+export function TodoList (props) {
   const rows = items.map((item, index) => (
     <Table.Tr key={++index}>
       <Table.Td>{++index}</Table.Td>
@@ -18,15 +18,15 @@ export function TodoList () {
   ));
 
   return (
-    <Table>
-      <Table.Thead>
-        <Table.Tr>
-          <Table.Th>Item #</Table.Th>
-          <Table.Th>Todo item</Table.Th>
-          <Table.Th></Table.Th>
-        </Table.Tr>
-      </Table.Thead>
-      <Table.Tbody>{rows}</Table.Tbody>
-    </Table>
+    <><h1>{props.test}</h1><Table>
+          <Table.Thead>
+              <Table.Tr>
+                  <Table.Th>Item #</Table.Th>
+                  <Table.Th>Todo item</Table.Th>
+                  <Table.Th></Table.Th>
+              </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>{rows}</Table.Tbody>
+      </Table></>
   );
 }

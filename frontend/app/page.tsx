@@ -7,7 +7,7 @@ export default function Home() {
       <Center pt={10}>
         <Text px={5} size='xl' >
         </Text>
-        <TodoList></TodoList>
+        <TodoList test="Todo"></TodoList>
       </Center>
     </Container>
   );
