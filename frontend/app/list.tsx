@@ -10,7 +10,7 @@ const items = [
 
 export function TodoList () {
   const rows = items.map((item, index) => (
-    <Table.Tr>
+    <Table.Tr key={index}>
       <Table.Td>{++index}</Table.Td>
       <Table.Td>{item}</Table.Td>
     </Table.Tr>
