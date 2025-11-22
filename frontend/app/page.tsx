@@ -1,5 +1,6 @@
 import { Center, Container, Text } from "@mantine/core";
 import { IconRocket } from "@tabler/icons-react";
+import { TodoList } from "./list"; // adjust path if needed
 
 export default function Home() {
   return (
@@ -7,8 +8,8 @@ export default function Home() {
       <Center pt={10}>
         <IconRocket/>
         <Text px={5} size='xl' >
-          Your todo app goes here!
         </Text>
+        <TodoList></TodoList>
         <IconRocket/>
       </Center>
     </Container>
