@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Table, Button } from '@mantine/core';
 
-export function TodoList ({initialItems}) {
+interface TodoListProps {
+  items: string[];
+  setItems: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
-// Load initialItems into items inside the state
-const [items, setItems] = useState(initialItems);
+export function TodoList ({ items, setItems } : TodoListProps) {
 
 // useEffect - runs stuff when things change
 
