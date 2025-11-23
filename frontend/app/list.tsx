@@ -3,21 +3,18 @@
 import { useState } from 'react';
 import { Table, Button } from '@mantine/core';
 
-export function TodoList (props) {
+export function TodoList ({initialItems}) {
+
+  // Initial state
+  // [variable to set, function = useState(start value)]
+  const [items, setItems] = useState(initialItems);
+
     const markDone = (index) => {
         // Item[index] is done, remove it
         // Filter runs over each element in the array
         // items.filter((val,idx) => function body which returns true or false per element)
         setItems(items.filter((val,idx) => idx !== index));
     }
-
-  // Initial state
-  // [variable to set, function = useState(start value)]
-  const [items, setItems] = useState([
-    "Take out rubbish",
-    "Buy more trash",
-    "Recycle."
-  ]);
 
   const rows = items.map((item, index) => (
     <Table.Tr key={index}>
@@ -28,7 +25,7 @@ export function TodoList (props) {
   ));
 
   return (
-    <><h1>{props.test}</h1><Table>
+    <><Table>
           <Table.Thead>
               <Table.Tr>
                   <Table.Th>Item #</Table.Th>
