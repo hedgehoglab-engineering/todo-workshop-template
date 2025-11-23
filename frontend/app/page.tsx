@@ -1,5 +1,6 @@
-import { Center, Container, Text } from "@mantine/core";
-import { TodoList } from "./list"; // adjust path if needed
+import { Stack, Container, Text } from "@mantine/core";
+import { TodoList } from "./list";
+import { TodoInput } from "./input";
 
 export default function Home() {
 
@@ -10,12 +11,11 @@ export default function Home() {
   ];
 
   return (
-    <Container w='100%' >
-      <Center pt={10}>
-        <Text px={5} size='xl' >
-        </Text>
-        <TodoList test="Todo" initialItems={initialItems}></TodoList>
-      </Center>
+    <Container w="100%">
+      <Stack spacing="md" pt={10}>
+        <TodoList initialItems={initialItems} />
+        <TodoInput />  {/* fullWidth will now work correctly */}
+      </Stack>
     </Container>
   );
 }
