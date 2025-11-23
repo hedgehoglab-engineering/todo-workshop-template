@@ -1,19 +1,29 @@
 'use client';
 
+import { useState } from 'react';
 import { Table, Button } from '@mantine/core';
 
-const items = [
-  "Take out trash",
-  "Buy more trash",
-  "Recycle."
-];
-
 export function TodoList (props) {
+    const markDone = (index) => {
+        // Item[index] is done, remove it
+        // Filter runs over each element in the array
+        // items.filter((val,idx) => function body which returns true or false per element)
+        setItems(items.filter((val,idx) => idx !== index));
+    }
+
+  // Initial state
+  // [variable to set, function = useState(start value)]
+  const [items, setItems] = useState([
+    "Take out rubbish",
+    "Buy more trash",
+    "Recycle."
+  ]);
+
   const rows = items.map((item, index) => (
-    <Table.Tr key={++index}>
-      <Table.Td>{++index}</Table.Td>
+    <Table.Tr key={index}>
+      <Table.Td>{index}</Table.Td>
       <Table.Td>{item}</Table.Td>
-      <Table.Td><Button key={++index}>Done</Button></Table.Td>
+      <Table.Td><Button key={index} onClick={() => markDone(index)}>Done</Button></Table.Td>
     </Table.Tr>
   ));
 
