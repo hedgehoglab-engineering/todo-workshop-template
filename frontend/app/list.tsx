@@ -1,20 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Table, Button } from '@mantine/core';
 
 export function TodoList ({initialItems}) {
 
-  // Initial state
-  // [variable to set, function = useState(start value)]
-  const [items, setItems] = useState(initialItems);
+// Load initialItems into items inside the state
+const [items, setItems] = useState(initialItems);
 
-    const markDone = (index) => {
-        // Item[index] is done, remove it
-        // Filter runs over each element in the array
-        // items.filter((val,idx) => function body which returns true or false per element)
-        setItems(items.filter((val,idx) => idx !== index));
-    }
+// useEffect - runs stuff when things change
+
+useEffect(() => {
+  const stored = window.localStorage.getItem("todo-items");
+  if (stored) setItems(JSON.parse(stored));
+}, []); // Empty array - run on initial load only
+
+useEffect(() => {
+  window.localStorage.setItem("todo-items", JSON.stringify(items));
+}, [items]); // Run every time items changes
+
+const markDone = (index) => {
+    // Item[index] is done, remove it
+    // Filter runs over each element in the array
+    // items.filter((val,idx) => function body which returns true or false per element)
+    setItems(items.filter((val,idx) => idx !== index));
+}
 
   const rows = items.map((item, index) => (
     <Table.Tr key={index}>

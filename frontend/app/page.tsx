@@ -6,9 +6,7 @@ export default function Home() {
   // Initial list
   // [variable to set, function = useState(start value)]
   const initialItems = [
-    "Take out rubbish",
-    "Buy more trash",
-    "Recycle."
+    "Loading..."
   ];
 
   return (
