@@ -10,9 +10,12 @@
     "clean": "rm -rf .next out node_modules next-env.d.ts"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
     "@mantine/core": "^8",
     "@mantine/hooks": "^8",
     "@tabler/icons-react": "^3",
+    "babel-plugin-react-compiler": "^1.0.0",
     "next": "^16",
     "react": "^19",
     "react-dom": "^19"
