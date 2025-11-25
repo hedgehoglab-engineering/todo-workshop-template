@@ -1,5 +1,6 @@
 import { Center, Container, Text } from "@mantine/core";
 import { IconRocket } from "@tabler/icons-react";
+import { TodoList } from "./list";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
           Your todo app goes here!
         </Text>
         <IconRocket/>
+        <TodoList/>
       </Center>
     </Container>
   );
