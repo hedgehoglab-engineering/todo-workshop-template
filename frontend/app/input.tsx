@@ -1,6 +1,7 @@
-import { TextInput , ActionIcon , Group } from '@mantine/core';
+import { TextInput, ActionIcon, Group } from '@mantine/core';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useState } from 'react';
+import styles from './TodoList.module.css';
 
 // We only really need interfaces if we're being strict about types
 // Which maybe we should be!
@@ -11,7 +12,7 @@ interface TodoInputProps {
 }
 
 // define items as an array of strings, and setItems as a function
-export function TodoInput ({ items, setItems }: TodoInputProps) {
+export function TodoInput({ items, setItems }: TodoInputProps) {
 
   // Give the input box a state
   const [todoText, setText] = useState<string>("");
@@ -26,20 +27,20 @@ export function TodoInput ({ items, setItems }: TodoInputProps) {
   // Note how TextInput's value is linked to todoText and onChange updates todoText
   return (
     <>
-    <Group align="flex-end" >
-    <TextInput
-      size="lg"
-      radius="xl"
-      label="Add todo item"
-      description="Let's get this done"
-      placeholder="Input placeholder"
-      value={todoText}
-      onChange={(event) => setText(event.currentTarget.value)}
-    />
-    
-    <ActionIcon variant="filled" color="red" size="xl" radius="xl" aria-label="Submit" onClick={addNew}>
-      <IconCircleCheck />
-    </ActionIcon>
-    </Group></>
+      <Group align="flex-end" >
+        <TextInput
+          size="lg"
+          radius="xl"
+          label="Add todo item"
+          description="Let's get this done"
+          placeholder="Input placeholder"
+          value={todoText}
+          onChange={(event) => setText(event.currentTarget.value)}
+        />
+
+        <ActionIcon className={styles.growButton} variant="filled" color="red" size="xl" radius="xl" aria-label="Submit" onClick={addNew}>
+          <IconCircleCheck />
+        </ActionIcon>
+      </Group></>
   );
 }

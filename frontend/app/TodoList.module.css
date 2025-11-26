@@ -1,5 +1,30 @@
+
 .progressSection {
   &:not(:first-of-type) {
     border-left: 3px solid light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
   }
+}
+
+.bouncyButton:hover {
+  animation: bounce 0.8s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.growButton {
+  transition: transform 0.2s ease-in-out;
+}
+
+.growButton:hover {
+  transform: scale(1.1);
 }
