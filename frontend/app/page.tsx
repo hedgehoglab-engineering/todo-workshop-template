@@ -10,8 +10,8 @@ export default function Home() {
   const [items, setItems] = useState<string[]>([]);
 
   return (
-    <Container w="100%">
-      <Stack pt={10}>
+    <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+      <Stack>
         <TodoList items={items} setItems={setItems} />
         <TodoInput items={items} setItems={setItems} />
       </Stack>
