@@ -53,8 +53,8 @@ export async function createTodo(payload: TodoPayload): Promise<Todo> {
     throw new Error("Unable to create todo");
   }
 
-  const id = await response.text();
-  return { id, ...payload };
+  const id: string = await response.json();
+  return fetchTodoById(id);
 }
 
 export async function updateTodo(id: string, payload: TodoPayload): Promise<Todo> {
