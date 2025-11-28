@@ -272,12 +272,12 @@ export default function Home() {
       <Stack gap="xl">
         <Stack gap="xs">
           <Title order={1}>Todos</Title>
-          <Text size="sm" color="dimmed">
+          <Text size="sm" c="dimmed">
             Talking to backend at {BACKEND_BASE}
           </Text>
         </Stack>
 
-        {error && <Alert color="red">{error}</Alert>}
+        {error && <Alert c="red">{error}</Alert>}
 
         <Paper p="md" shadow="sm" radius="md" withBorder>
           <form onSubmit={handleCreate}>
@@ -348,14 +348,14 @@ export default function Home() {
                       <Group gap="xs">
 
                         <ActionIcon
-                          color="green"
+                          c="green"
                           disabled={savingId === todo.id}
                           onClick={() => void handleSave(todo)}
                         >
                           <IconCheck size={18} />
                         </ActionIcon>
                         <ActionIcon
-                          color="red"
+                          c="red"
                           disabled={deletingId === todo.id}
                           onClick={() => void handleDelete(todo.id)}
                         >
@@ -387,7 +387,7 @@ export default function Home() {
               );
             })
           ) : (
-            <Text color="dimmed" ta="center">
+            <Text c="dimmed" ta="center">
               No todos yet — add your first one.
             </Text>
           )}
